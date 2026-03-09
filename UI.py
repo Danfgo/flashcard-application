@@ -297,7 +297,11 @@ def on_closing_settings(settings_window, user_class, entries):
         except ValueError:
             messagebox.showwarning(title="Warning", message="Invalid inputs entered")
             return
-        
+
+        if initial_ease_factor <= 0 or min_interval <= 0 or max_interval <= 0 or ease_factor_change <= 0 or lapse_penalty <= 0: # Ensures that values cannot be <= 0
+            messagebox.showwarning(title="Warning", message="No values must be 0 or negative numbers")
+            return
+            
         if min_interval > max_interval: # Ensures that min interval can never be greater
             messagebox.showwarning(title="Warning", message="Minimum interval cannot be greater than maximum interval")
             return
@@ -693,4 +697,5 @@ def deserialize_text_widget(text_widget, json_data):
         text_widget.tag_configure(tag, **info["config"])
         for start, end in info["ranges"]:
             text_widget.tag_add(tag, start, end)
+
 
