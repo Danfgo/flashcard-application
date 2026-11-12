@@ -1,9 +1,13 @@
-Basic description goes here
+# 📚 Flashcard Application
 
-## Technologies
+## 💻 Technologies
 - Python
 - SQL 3
 - Tkinter
 
 
-## Features
+## ⚙️ Features
+- Login system
+- User leaderboard
+- Statistics
+- Spaced repetition and settings
